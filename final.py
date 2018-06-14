@@ -287,6 +287,7 @@ def newProducts(flowershop_id):
     '/flowershop/<int:flowershop_id>/product/<int:product_id>/edit',
     methods=['GET', 'POST'])
 def editProducts(flowershop_id, product_id):
+    session = DBSession()
     if 'username' not in login_session:
         return redirect('/login')
     editedFlower = session.query(AvailableItem).filter_by(id=product_id).one()
@@ -300,6 +301,7 @@ def editProducts(flowershop_id, product_id):
             editedFlower.course = request.form['course']
         session.add(editedFlower)
         session.commit()
+        session.close()
         flash('Flower Edited')
         return redirect(url_for('showProduct', flowershop_id=flowershop_id))
     else:
