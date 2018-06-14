@@ -1,0 +1,37 @@
+<html>
+
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+</head>
+
+<body>
+	
+	<form action="/login" method="get">
+		<button class="loginbutton" type="submit">Logout</button>
+		
+	</form>
+	<form action="/" class="login" method="get">
+		<button class="loginbutton" type="submit">GoHome</button>
+	</form>
+	<center>
+	<h1> Edit Flowershop </h1>
+
+
+	<form action="{{ url_for('editFlowershop',flowershop_id = flowershop.id)}}" method='post'>
+
+
+		<p>Name:</p>
+		<input type='text' size='30' name='name' placeholder='{{flowershop.name }}'>
+
+
+		<input type='submit' value='Edit'>
+
+
+		<a href='{{url_for('showflowerShops')}}'> Cancel </a>
+
+	</form>
+	</center>
+</body>
+
+</html>

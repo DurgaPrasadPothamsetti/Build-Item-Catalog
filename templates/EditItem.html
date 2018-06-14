@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+	</head>
+
+<body>
+        <form action="/login" method="get">
+			<button class="loginbutton" type="submit">Logout</button>
+	
+		</form>
+		<form action="/" class="login" method="get">
+			<button class="loginbutton" type="submit">GoHome</button>
+		</form>	
+		<center>
+    <h1> Edit Product </h1>
+
+<form action="#" method = 'post'>
+
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder = '{{product.name }}'>
+	<p>Price:</p>
+		<input type ='text' size='30' name='price' placeholder = '{{product.price}}'>
+	<p>Course:<p>
+
+	{% if product.course == 'season' %}
+		<dd><input type ='radio' name='course' value='season'checked >season</dd>
+	{%else%}
+	<dd><input type ='radio' name='course' value='season' >season</dd>
+    {% endif %}
+
+    {% if product.course == 'nonseason' %}
+       <dd><input type ='radio' name='course' value='nonseason' checked>nonseason</dd>
+
+    {%else%}
+		<dd><input type ='radio' name='course' value='nonseason'>nonseason</dd>
+    {% endif %}
+
+	{% if product.course == 'everyseason'%}
+		<dd><input type ='radio' name='course' value='everyseason'checked >everyseason</dd>
+
+	{% else %}
+	   <dd><input type ='radio' name='course' value='everyseason'>everyseason</dd>
+
+	{% endif %}
+
+
+<input type='submit' value='Edit'>
+
+
+<a href = '#'> Cancel </a>
+
+
+</form>
+</center>
+</body>
+</html>

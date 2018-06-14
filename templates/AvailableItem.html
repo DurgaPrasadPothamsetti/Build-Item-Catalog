@@ -1,0 +1,105 @@
+<html>
+	
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+	</head>
+	<body>
+		
+		<form action="/login" method="get">
+			<button class="loginbutton" type="submit">Login</button>	
+		</form>	
+		<form action="/" class="login" method="get">
+			<button class="loginbutton" type="submit">GoHome</button>
+		</form>
+		<center>
+		<div class = 'pane'>
+		<h1>{{ flowershop.name }}</h1>
+		
+		{% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% if products !=[] %}
+
+		<a href = "{{url_for('newProducts', flowershop_id = flowershop.id )}}">Create New Flowershop</a>
+	</br></br>
+
+	<h2>season</h2>
+
+		{% for i in products %}
+		{% if i.course == 'season' %}
+
+		<p>{{i.nameofflower}}</p>
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editProducts', flowershop_id = flowershop.id, product_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteItems', flowershop_id = flowershop.id, product_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+		{% endif %}
+
+		{% endfor %}
+
+		
+
+		</br></br>
+
+	<h2>nonseason</h2>
+
+		{% for i in products %}
+		{% if i.course == 'nonseason' %}
+
+		<p>{{i.nameofflower}}</p>
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editProducts', flowershop_id = flowershop.id, product_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteItems', flowershop_id = flowershop.id, product_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+        {% endif %}
+
+		{% endfor %}
+		
+		
+
+		</br></br>
+
+	<h2>everyseason</h2>
+
+		{% for i in products %}
+		{% if i.course == 'everyseason' %}
+
+		<p>{{i.nameofflower}}</p>
+		<p>{{i.price}}</p>
+		<a href='{{url_for('editProducts', flowershop_id  = flowershop.id, product_id=i.id ) }}' >Edit</a><br>
+	
+	<a href='{{url_for('deleteItems', flowershop_id  = flowershop.id, product_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+		{% endif %}
+
+		{% endfor %}
+		
+		
+
+		</br></br>
+		
+
+		{% else %}
+		<p> You currently have no Flowers. <p>
+		<a href = "{{url_for('newProducts', flowershop_id = flowershop.id )}}">Create New Flower</a>
+			{% endif %}
+</div>
+</center>
+	</body>
+
+</html>

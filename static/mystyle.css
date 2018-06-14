@@ -1,0 +1,70 @@
+body {
+    background-image: url('https://s15.postimg.cc/d4rk1uvln/flower.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: black;
+    font-family:cursive;
+    text-decoration:none;
+}
+a{
+    text-decoration: none !important;
+}
+.shopname{
+    width:150px;
+    border:2px solid green;
+    height:22px;   
+    text-decoration:none;
+}
+.shopname:hover{
+    color: white;
+    background-color: #4CAF50;
+}
+.editdel{
+    width:150px;
+    border:2px solid blue;
+    height:70px;   
+    text-decoration:none;
+}
+.button {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.login{
+    margin: 4px 2px;
+
+}
+
+.loginbutton {
+    background-color: rgb(141, 202, 112);
+    /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.loginbutton:hover{
+    background-color: #4CAF50;
+color: white;
+}

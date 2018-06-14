@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='mystyle.css') }}">
+	</head>
+<body>
+        <form action="/login" method="get">
+			<button class="loginbutton" type="submit">Logout</button>	
+		</form>
+		<form action="/" class="login" method="get">
+			<button class="loginbutton" type="submit">GoHome</button>
+		</form>	
+		<center>
+<h1>New Product</h1>
+
+<form action="#" method = 'post'>
+
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name'>
+	<p>Price:</p>
+		<input type ='text' size='30' name='price'>
+	<p>Course:</p>
+		<input type ='radio'  name='course' value ='season'>season</br>
+		<input type ='radio'  name='course' value ='nonseason'>nonseason</br>
+		<input type ='radio' name='course' value ='everyseason'>everyseason</br>
+	</br>
+
+
+<input type='submit' value='Create'>
+
+</form>
+</center>
+</body>
+</html>
